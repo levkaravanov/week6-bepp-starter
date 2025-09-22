@@ -33,7 +33,7 @@ const getTourById = async (req, res) => {
 
   try {
     const user_id = req.user._id;
-    const tour = await Tour.findById(tourId);
+    const tour = await Tour.findOne({ _id: tourId, user_id: user_id });
     if (tour) {
       res.status(200).json(tour);
     } else {

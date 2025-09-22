@@ -28,6 +28,10 @@ beforeAll(async () => {
     name: "Rami",
     email: "mattiv@matti.fi",
     password: "R3g5T7#gh",
+    phone_number: "1234567890",
+    gender: "male",
+    date_of_birth: "1990-01-01",
+    membership_status: "Active"
   });
   token = result.body.token;
 });

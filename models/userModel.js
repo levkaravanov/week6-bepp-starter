@@ -58,7 +58,7 @@ userSchema.statics.signup = async function (
   // validation
   if (
     (!name,
-    !email ||
+      !email ||
       !password ||
       !gender ||
       !phone_number ||
@@ -87,6 +87,10 @@ userSchema.statics.signup = async function (
     name,
     email,
     password: hashedPassword,
+    gender,
+    phone_number,
+    date_of_birth,
+    membership_status,
   });
 
   return user;

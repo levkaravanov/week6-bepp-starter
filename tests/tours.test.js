@@ -27,11 +27,11 @@ beforeAll(async () => {
   const result = await api.post("/api/users/signup").send({
     name: "John Doe",
     email: "john@example.com",
-    password: "4wa94=Vr++",
+    password: "R3g5T7#gh",
     phone_number: "1234567890",
-    gender: "Male",
+    gender: "male",
     date_of_birth: "1990-01-01",
-    membership_status: "Inactive",
+    membership_status: "Active",
   });
   token = result.body.token;
 });
@@ -52,11 +52,13 @@ describe("Given there are initially some tours saved", () => {
   });
 
   it("should return all tours as JSON when GET /api/tours is called", async () => {
-    await api
+    const response = await api
       .get("/api/tours")
       .set("Authorization", "bearer " + token)
       .expect(200)
       .expect("Content-Type", /application\/json/);
+
+    expect(response.body).toHaveLength(2);
   });
 
   it("should create one tour when POST /api/tours is called", async () => {

@@ -9,8 +9,8 @@ const {
 } = require("../controllers/tourControllers");
 const requireAuth = require("../middleware/requireAuth");
 
-router.get("/", getAllTours);
 router.use(requireAuth);
+router.get("/", getAllTours);
 router.post("/", createTour);
 router.get("/:tourId", getTourById);
 router.put("/:tourId", updateTour);
