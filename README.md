@@ -1,3 +1,17 @@
+### What does this line of code do?
+req.user = await User.findOne({ _id }).select("_id");
+
+This line queries the database for a user whose _id matches the given value, retrieves only the _id field from that user document, and assigns the result to req.user.
+
+1. await User.findOne({ _id }): Finds a user by their unique MongoDB _id.
+
+2. .select("_id"): Only includes the _id field in the result (other fields are excluded).
+
+4. req.user = ...: Stores the found user (with only _id) in the request object for later use in the request lifecycle.
+
+
+
+
 ### What are these functions (userSchema.statics.signup() and userSchema.statics.login())?
 
 signup: Handles user registration, including validation, password hashing, and user creation.
