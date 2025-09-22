@@ -1,3 +1,8 @@
+### What are these functions (userSchema.statics.signup() and userSchema.statics.login())?
+
+signup: Handles user registration, including validation, password hashing, and user creation.
+login: Handles user authentication by checking credentials and comparing hashed passwords.
+
 ### Why are they used?
 
 These static methods are used for several important reasons:
@@ -52,7 +57,6 @@ const signupUser = async (req, res) => {
 ```javascript
 // middleware/auth.js
 const authenticateUser = async (req, res, next) => {
-  // Authentication logic in middleware
 }
 ```
 
@@ -60,8 +64,8 @@ const authenticateUser = async (req, res, next) => {
 ```javascript
 // repositories/userRepository.js
 class UserRepository {
-  async createUser(userData) { /* logic */ }
-  async findUserByEmail(email) { /* logic */ }
+  async createUser(userData)
+  async findUserByEmail(email)
 }
 ```
 
